@@ -1,13 +1,14 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 const app = express();
-require("dotenv").config();
-const mongoose = require("mongoose");
+import dotenv from 'dotenv';
+dotenv.config();
+import mongoose from "mongoose";
 app.use(express.json());
-var cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 app.use(bodyParser.json());
-app.use(cookieParser());
+import authRoutes from './routes/auth';
+import accountRoutes from './routes/account';
 
 app.use(
   cors({
@@ -24,8 +25,8 @@ app.get("/health", async(req, res)=>{
   res.send({message: "Health OK!"});
 })
 
-app.use("/api/auth/", require("./routes/auth"));
-app.use("/api/account/", require("./routes/account"));
+app.use("/api/auth/", authRoutes);
+app.use("/api/account/", accountRoutes);
 
 app.listen(4000, ()=>{
   console.log("Server started on localhost:4000")

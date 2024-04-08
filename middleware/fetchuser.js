@@ -1,4 +1,4 @@
-var jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken"
 const JWT_SECRET = process.env.JWT_SECRET;
 const fetchuser = (req, res, next) => {
   //Get the user from the jwt token and add id to req object
@@ -15,5 +15,4 @@ const fetchuser = (req, res, next) => {
     res.status(401).send({ error: "Please authenticate using a valid token" });
   }
 };
-
-module.exports = fetchuser;
+export default {fetchuser};

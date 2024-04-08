@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const PlaceSchema = new Schema({
@@ -20,4 +20,4 @@ const PlaceSchema = new Schema({
 
 const PlaceModel = mongoose.model("place", PlaceSchema);
 
-module.exports = PlaceModel;
+export default {PlaceModel}

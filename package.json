@@ -1,11 +1,12 @@
 {
+  "type": "module",
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.cjs",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.cjs",
+    "start": "node index.mjs",
     "dev": "nodemon index.js",
     "build": "npm install && npx rollup -c"
   },
