@@ -4,8 +4,8 @@ const router = express.Router();
 import cors from "cors";
 import axios from "axios";
 import multer from "multer";
-import Booking from '../models/Booking';
-import fetchuser from '../middleware/fetchuser'; // Assumes 'fetchuser' is default export
+import Booking from '../models/Booking.js';
+import fetchuser from '../middleware/fetchuser.js'; // Assumes 'fetchuser' is default export
 
 
 app.use(
@@ -15,7 +15,7 @@ app.use(
   })
 );
 
-import Place from '../models/Place';
+import Place from '../models/Place.js';
 
 
 router.get("/bookings", fetchuser, async (req, res) => {

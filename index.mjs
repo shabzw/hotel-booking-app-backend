@@ -7,8 +7,8 @@ import mongoose from "mongoose";
 app.use(express.json());
 import bodyParser from "body-parser";
 app.use(bodyParser.json());
-import authRoutes from './routes/auth';
-import accountRoutes from './routes/account';
+import authRoutes from './routes/auth.js';
+import accountRoutes from './routes/account.js';
 
 app.use(
   cors({
