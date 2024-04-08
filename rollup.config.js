@@ -6,7 +6,7 @@ import json from '@rollup/plugin-json';
 import nodeResolvePlugin from '@rollup/plugin-node-resolve';
 
 export default {
-  input: 'index.js',
+  input: 'index.mjs',
   output: {
     file: 'dist/bundle.js',
     format: 'es',
