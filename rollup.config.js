@@ -9,7 +9,7 @@ export default {
   input: 'index.js',
   output: {
     file: 'dist/bundle.js',
-    format: 'es',
+    format: 'cjs',
   },
   plugins: [
     nodeResolvePlugin(), // Use the explicitly imported plugin
