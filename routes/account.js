@@ -1,12 +1,9 @@
-import express from "express";
+const express = require("express");
 const app = express();
 const router = express.Router();
-import cors from "cors";
-import axios from "axios";
-import multer from "multer";
-import Booking from '../models/Booking.js';
-import fetchuser from '../middleware/fetchuser.js'; // Assumes 'fetchuser' is default export
-
+const cors = require("cors");
+const axios = require("axios");
+const multer = require("multer");
 
 app.use(
   cors({
@@ -15,8 +12,11 @@ app.use(
   })
 );
 
-import Place from '../models/Place.js';
+const User = require("../models/User");
+const Booking = require("../models/Booking");
+const Place = require("../models/Place");
 
+var fetchuser = require("../middleware/fetchuser");
 
 router.get("/bookings", fetchuser, async (req, res) => {
   try {
@@ -30,7 +30,7 @@ router.get("/bookings", fetchuser, async (req, res) => {
   }
 });
 
-import { v2 as cloudinary } from 'cloudinary';
+const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -206,4 +206,4 @@ router.get("/places/:id", fetchuser, async (req, res) => {
   res.json(await Place.findById(id));
 });
 
-export default {router}
+module.exports = router;

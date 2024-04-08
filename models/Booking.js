@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 // const PlaceModel = require("./Place")
 const { Schema } = mongoose;
 
@@ -15,4 +15,4 @@ const BookingSchema = new Schema({
 
 const BookingModel = mongoose.model("booking", BookingSchema);
 
-export default { BookingModel };
+module.exports = BookingModel;
