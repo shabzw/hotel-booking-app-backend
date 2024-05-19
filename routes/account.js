@@ -197,7 +197,7 @@ router.post("/bookings", fetchuser, async (req, res) => {
   res.json(doc);
 });
 
-router.get("/places", async (req, res) => {
+router.get("/places",fetchuser, async (req, res) => {
   res.json(await Place.find());
 });
 
